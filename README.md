@@ -11,7 +11,7 @@ UICollectionViewCell、UICollectionReusableView、UICollectionViewController、U
 |プロパティ名|説明|サンプル|
 |---|---|---|
 |delegate | delegateを指定する <br>UICollectionViewDelegateを利用するため | collectionView.delegate = self |
-|dataSource | dataSourceを指定する <br>UICollectionViewDataSource | collectionView.dataSource |
+|dataSource | dataSourceを指定する <br>UICollectionViewDataSource | collectionView.dataSource = self |
 
 ## 主要メソッド
 
