@@ -3,6 +3,8 @@
 ## 概要
 UICollectionViewは、タイル上にビューを配置するときに利用します。
 
+![UICollectionViewのイメージ](https://github.com/stv-ekushida/ios-uikit-uicollectionview-demo/wiki/images/collectionview.png)
+
 ## 関連クラス
 UICollectionViewCell、UICollectionReusableView、UICollectionViewController、UIScrollView
 
