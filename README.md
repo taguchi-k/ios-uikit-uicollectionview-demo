@@ -7,7 +7,18 @@ UICollectionViewは、タイル上にビューを配置するときに利用し�
 
 ## 関連クラス
 UICollectionViewCell、UICollectionReusableView、UICollectionViewController、UIScrollView
-
+　
+## 実装手順
+1. StoryboardにUICollectionViewを配置します。
+2. UIViewControllerとStoryboardのUICollectionViewを関連けます。
+3. UICollectionViewの上にUICollectionViewCellを配置します。
+4. UICollectionViewCellを継承したサブクラスを定義します。
+5. UICollectionViewCellのサブクラスととStoryboardのUICollectionViewCellを関連付けます。
+6. StoryboardのUICollectionViewCellのCollection Reusable ViewのIdentifierにクラス名と同名のIDを付加します。
+7. UIViewControllerにUICollectionViewDataSourceを実装します。
+8. dataSourceにUIViewControllerのインスタンスを設定します。
+9. UICollectionViewDataSourceを実装するに当たり必須のメソッドをオーバーライドします。
+ 
 ## 主要プロパティ
 
 |プロパティ名|説明|サンプル|
