@@ -18,6 +18,13 @@ UICollectionViewCell、UICollectionReusableView、UICollectionViewController、U
 7. UIViewControllerにUICollectionViewDataSourceを実装します。
 8. dataSourceにUIViewControllerのインスタンスを設定します。
 9. UICollectionViewDataSourceを実装するに当たり必須のメソッドをオーバーライドします。
+
+## セルのロングタップで編集メニューを表示する
+1. shouldShowMenuForItemAt・canPerformAction・performAction 左記UICollectionViewDelegateプロトコルのメソッドを実装する
+2. メニュー表示可能なセル（shouldShowMenuForItemAtで設定）をロングタップする
+3. 編集メニューが表示される（canPerformActionで設定されたメニューが表示される）
+4. 実行したい編集メニューをタップする
+5. 選択した編集メニューが実行される（performActionで設定）
  
 ## 主要プロパティ
 
@@ -37,6 +44,9 @@ UICollectionViewCell、UICollectionReusableView、UICollectionViewController、U
 |メソッド名|説明|必須|
 |---|---|---|
 |didSelectItemAt | セルが選択されたときに呼び出される | - |
+|shouldShowMenuForItemAt | 編集メニューを表示するかどうかをBoolで返す | - |
+|canPerformAction | どのメニューを表示するのかをBoolを返して指定する | - |
+|performAction | 各メニューがタップされたときの処理 | - |
 
 ### UICollectionViewDataSourceプロトコルのメソッド
 
