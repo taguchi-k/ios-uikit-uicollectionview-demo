@@ -38,6 +38,40 @@ extension ViewController: UICollectionViewDelegate {
                         didSelectItemAt indexPath: IndexPath) {
         print("indexPath: \(indexPath.section) - \(indexPath.row)")
     }
+
+    // MARk: - セルのロングタップで編集メニューを表示する
+
+    /// 編集メニューを表示するかどうか
+    func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
+
+        // rowが4のセルはメニューを表示しない
+        if indexPath.row == 4 {
+            return false
+        }
+
+        return true
+    }
+
+    /// どのメニューを表示するのかをBoolを返して指定する
+    func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+
+        // コピーとペーストを表示する
+        if action == #selector(UIResponderStandardEditActions.copy(_:)) || action == #selector(UIResponderStandardEditActions.paste(_:)) {
+            return true
+        }
+
+        return false
+    }
+
+    /// 各メニューがタップされたときの処理
+    func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+
+        if action == #selector(UIResponderStandardEditActions.copy(_:)) {
+            print("コピーがタップされました indexPath: \(indexPath), sender: \(sender!)")
+        } else if action == #selector(UIResponderStandardEditActions.paste(_:)) {
+            print("ペーストがタップされました indexPath: \(indexPath), sender: \(sender!)")
+        }
+    }
 }
 
 //MARK:-UICollectionViewDelegateFlowLayout
